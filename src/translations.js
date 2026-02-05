@@ -109,7 +109,17 @@ export const translations = {
     session_geometry_title: "Introduction to Geometry",
     session_geometry_subject: "Mathematics",
     session_chola_title: "History of Chola Empire",
-    session_chola_subject: "History"
+    session_chola_subject: "History",
+    study_materials_title: "Study Materials",
+    study_materials_desc: "Access a library of knowledge. Download notes, slides, and books for offline learning.",
+    search_placeholder: "Search by topic or subject...",
+    filter_all: "All Languages",
+    download_btn: "Download",
+    material_calculus: "Calculus Fundamentals",
+    material_chemistry: "Organic Chemistry Notes",
+    material_civics: "Indian Constitution Overview",
+    material_python: "Python for Beginners",
+    material_physics: "Thermodynamics Cheat Sheet"
   },
   ta: {
     home: "முகப்பு",
@@ -221,7 +231,17 @@ export const translations = {
     session_geometry_title: "வடிவியல் அறிமுகம்",
     session_geometry_subject: "கணிதம்",
     session_chola_title: "சோழ சாம்ராஜ்யத்தின் வரலாறு",
-    session_chola_subject: "வரலாறு"
+    session_chola_subject: "வரலாறு",
+    study_materials_title: "படிப்பு பொருட்கள்",
+    study_materials_desc: "அறிவின் நூலகத்தை அணுகவும். ஆஃப்லைனில் கற்க குறிப்புகள், ஸ்லைடுகள் மற்றும் புத்தகங்களைப் பதிவிறக்கவும்.",
+    search_placeholder: "தலைப்பு அல்லது பாடம் மூலம் தேடவும்...",
+    filter_all: "அனைத்து மொழிகள்",
+    download_btn: "பதிவிறக்க",
+    material_calculus: "கால்குலஸ் அடிப்படைகள்",
+    material_chemistry: "கரிம வேதியியல் குறிப்புகள்",
+    material_civics: "இந்திய அரசியலமைப்பு கண்ணோட்டம்",
+    material_python: "தொடக்கநிலையாளர்களுக்கான பைதான்",
+    material_physics: "வெப்ப இயக்கவியல் குறிப்பு"
   },
   te: {
     home: "హోమ్",
@@ -333,7 +353,17 @@ export const translations = {
     session_geometry_title: "జ్యామితి పరిచయం",
     session_geometry_subject: "గణితం",
     session_chola_title: "చోళ సామ్రాజ్య చరిత్ర",
-    session_chola_subject: "చరిత్ర"
+    session_chola_subject: "చరిత్ర",
+    study_materials_title: "స్టడీ మెటీరియల్స్",
+    study_materials_desc: "ಜ್ಞాన గ్రంథాలయానికి ప్రాప్యత పొందండి. ఆఫ్‌లైన్ అభ్యాసం కోసం నోట్స్, స్లైడ్‌లు మరియు పుస్తకాలను డౌన్‌లోడ్ చేయండి.",
+    search_placeholder: "టాపిక్ లేదా సబ్జెక్ట్ ద్వారా శోధించండి...",
+    filter_all: "అన్ని భాషలు",
+    download_btn: "డౌన్‌లోడ్",
+    material_calculus: "కార్కులస్ ప్రాథమిక అంశాలు",
+    material_chemistry: "ఆర్గానిక్ కెమిస్ట్రీ నోట్స్",
+    material_civics: "భారత రాజ్యాంగం అవలోకనం",
+    material_python: "బిగినర్స్ కోసం పైథాన్",
+    material_physics: "థర్మోడైనమిక్స్ చీట్ షీట్"
   },
   hi: {
     home: "होम",
@@ -445,6 +475,16 @@ export const translations = {
     session_geometry_title: "ज्यामिति का परिचय",
     session_geometry_subject: "गणित",
     session_chola_title: "चोल साम्राज्य का इतिहास",
-    session_chola_subject: "इतिहास"
+    session_chola_subject: "इतिहास",
+    study_materials_title: "अध्ययन सामग्री",
+    study_materials_desc: "ज्ञान के पुस्तकालय तक पहुँचें। ऑफ़लाइन सीखने के लिए नोट्स, स्लाइड और किताबें डाउनलोड करें।",
+    search_placeholder: "विषय या सबजेक्ट द्वारा खोजें...",
+    filter_all: "सभी भाषाएं",
+    download_btn: "डाउनलोड",
+    material_calculus: "कैलकुलस फंडामेंटल्स",
+    material_chemistry: "ऑर्गेनिक केमिस्ट्री नोट्स",
+    material_civics: "भारतीय संविधान अवलोकन",
+    material_python: "शुरुआती के लिए पायथन",
+    material_physics: "थर्मोडायनामिक्स चीट शीट"
   }
 };

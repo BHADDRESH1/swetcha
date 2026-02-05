@@ -1,60 +1,67 @@
 import React, { useState } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 import { FileText, Download, Bookmark, Search, Filter, File } from 'lucide-react';
 
 const StudyMaterials = () => {
+    const { t } = useLanguage();
     const [selectedLanguage, setSelectedLanguage] = useState('All');
     const [searchQuery, setSearchQuery] = useState('');
 
     const materials = [
         {
             id: 1,
-            title: "Calculus Fundamentals",
+            title: t('material_calculus'),
             type: "PDF",
             subject: "Mathematics",
             skill: "Advanced Math",
             difficulty: "Hard",
             language: "English",
-            size: "2.4 MB"
+            size: "2.4 MB",
+            content: "Calculus Fundamentals Content..."
         },
         {
             id: 2,
-            title: "Organic Chemistry Notes",
+            title: t('material_chemistry'),
             type: "Notes",
             subject: "Chemistry",
             skill: "Science",
             difficulty: "Medium",
             language: "Tamil",
-            size: "1.1 MB"
+            size: "1.1 MB",
+            content: "Organic Chemistry Notes Content..."
         },
         {
             id: 3,
-            title: "Indian Constitution Overview",
+            title: t('material_civics'),
             type: "Slides",
             subject: "Civics",
             skill: "Social Studies",
             difficulty: "Easy",
             language: "Hindi",
-            size: "5.6 MB"
+            size: "5.6 MB",
+            content: "Indian Constitution Overview Content..."
         },
         {
             id: 4,
-            title: "Python for Beginners",
+            title: t('material_python'),
             type: "PDF",
             subject: "Computer Science",
             skill: "Programming",
             difficulty: "Easy",
             language: "English",
-            size: "3.2 MB"
+            size: "3.2 MB",
+            content: "Python for Beginners Content..."
         },
         {
             id: 5,
-            title: "Thermodynamics Cheat Sheet",
+            title: t('material_physics'),
             type: "Document",
             subject: "Physics",
             skill: "Science",
             difficulty: "Medium",
             language: "Telugu",
-            size: "800 KB"
+            size: "800 KB",
+            content: "Thermodynamics Cheat Sheet Content..."
         }
     ];
 
@@ -63,15 +70,26 @@ const StudyMaterials = () => {
         (m.title.toLowerCase().includes(searchQuery.toLowerCase()) || m.subject.toLowerCase().includes(searchQuery.toLowerCase()))
     );
 
+    const handleDownload = (material) => {
+        // Create a dummy file for demonstration
+        const element = document.createElement("a");
+        const file = new Blob([`This is a placeholder for ${material.title}\n\nSubject: ${material.subject}\nLanguage: ${material.language}\n\n${material.content}`], { type: 'text/plain' });
+        element.href = URL.createObjectURL(file);
+        element.download = `${material.title.replace(/\s+/g, '_')}.txt`;
+        document.body.appendChild(element); // Required for this to work in FireFox
+        element.click();
+        document.body.removeChild(element);
+    };
+
     return (
         <section className="section" style={{ paddingTop: '8rem', minHeight: '100vh' }}>
             <div className="container">
                 <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
                     <h1 style={{ fontSize: '3rem', fontWeight: '800', marginBottom: '1rem' }}>
-                        Study <span className="text-gradient">Materials</span>
+                        Study <span className="text-gradient">{t('study_materials_title').split(' ')[0]}</span> <span className="text-gradient">{t('study_materials_title').split(' ').slice(1).join(' ')}</span>
                     </h1>
                     <p style={{ fontSize: '1.25rem', color: 'var(--text-muted)', maxWidth: '700px', margin: '0 auto' }}>
-                        Access a library of knowledge. Download notes, slides, and books for offline learning.
+                        {t('study_materials_desc')}
                     </p>
                 </div>
 
@@ -80,7 +98,7 @@ const StudyMaterials = () => {
                         <Search size={20} color="var(--text-muted)" style={{ position: 'absolute', left: '1rem', top: '50%', transform: 'translateY(-50%)' }} />
                         <input
                             type="text"
-                            placeholder="Search by topic or subject..."
+                            placeholder={t('search_placeholder')}
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
                             style={{
@@ -110,7 +128,7 @@ const StudyMaterials = () => {
                                 cursor: 'pointer'
                             }}
                         >
-                            <option value="All">All Languages</option>
+                            <option value="All">{t('filter_all')}</option>
                             <option value="English">English</option>
                             <option value="Tamil">Tamil</option>
                             <option value="Telugu">Telugu</option>
@@ -154,8 +172,12 @@ const StudyMaterials = () => {
 
                             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '1rem', paddingTop: '1rem', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
                                 <span style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>{item.size} • {item.type}</span>
-                                <button className="btn btn-secondary" style={{ padding: '0.5rem 1rem', fontSize: '0.9rem' }}>
-                                    <Download size={16} /> Download
+                                <button
+                                    className="btn btn-secondary"
+                                    style={{ padding: '0.5rem 1rem', fontSize: '0.9rem', cursor: 'pointer' }}
+                                    onClick={() => handleDownload(item)}
+                                >
+                                    <Download size={16} /> {t('download_btn')}
                                 </button>
                             </div>
                         </div>
