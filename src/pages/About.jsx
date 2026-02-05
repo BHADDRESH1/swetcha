@@ -7,10 +7,10 @@ const About = () => {
     const { t } = useLanguage();
 
     const team = [
-        { name: "Suresh Kumar", role: "Founder & Educator", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200&h=200" },
-        { name: "Priya Reddy", role: "Content Lead (Telugu)", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200&h=200" },
-        { name: "Anand Murthy", role: "Tech Lead", img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=200&h=200" },
-        { name: "Divya Singh", role: "Community Manager", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200&h=200" }
+        { name: "Suresh Kumar", role: t('role_founder'), img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200&h=200" },
+        { name: "Priya Reddy", role: t('role_content_lead'), img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200&h=200" },
+        { name: "Anand Murthy", role: t('role_tech_lead'), img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=200&h=200" },
+        { name: "Divya Singh", role: t('role_community_manager'), img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200&h=200" }
     ];
 
     return (
@@ -20,7 +20,7 @@ const About = () => {
                     <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
                         <h1 style={{ fontSize: '3rem', fontWeight: '800', marginBottom: '1rem' }}><span className="text-gradient">{t('about')} Swetcha</span></h1>
                         <p style={{ fontSize: '1.25rem', color: 'var(--text-muted)', maxWidth: '700px', margin: '0 auto' }}>
-                            Building a future where knowledge is free, accessible, and inclusive.
+                            {t('about_swetcha_subtitle')}
                         </p>
                     </div>
 
@@ -28,17 +28,17 @@ const About = () => {
                         <div>
                             <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem', fontWeight: '700' }}>{t('mission_title')}</h2>
                             <p style={{ color: 'var(--text-muted)', marginBottom: '1rem', fontSize: '1.1rem' }}>
-                                At Swetcha Learning, we believe education is a fundamental right, not a privilege. Our mission is to dismantle language barriers that prevent millions of talented students from accessing quality education.
+                                {t('mission_desc_1')}
                             </p>
                             <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem' }}>
-                                We focus on Open Educational Resources (OER) and community-driven content creation to build a knowledge commons that belongs to everyone.
+                                {t('mission_desc_2')}
                             </p>
                         </div>
                         <div className="glass-card" style={{ padding: '3rem', textAlign: 'center' }}>
                             <Target size={64} color="var(--primary)" style={{ marginBottom: '1.5rem' }} />
-                            <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Our Vision</h3>
+                            <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>{t('vision_title')}</h3>
                             <p style={{ color: 'var(--text-muted)' }}>
-                                To create a society where every individual, regardless of their linguistic background or economic status, has the power to learn, create, and innovate using technology.
+                                {t('vision_desc')}
                             </p>
                         </div>
                     </div>
@@ -47,17 +47,17 @@ const About = () => {
                     <div style={{ marginBottom: '6rem' }}>
                         <h2 style={{ textAlign: 'center', fontSize: '2rem', marginBottom: '3rem', fontWeight: '700' }}>{t('who_we_serve')}</h2>
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
-                            <Card title="Students" icon={BookOpen}>
-                                School & College students looking for conceptual clarity in their mother tongue.
+                            <Card title={t('card_students_title')} icon={BookOpen}>
+                                {t('card_students_desc')}
                             </Card>
-                            <Card title="Aspirants" icon={Target}>
-                                Competitive exam aspirants needing affordable and accessible coaching materials.
+                            <Card title={t('card_aspirants_title')} icon={Target}>
+                                {t('card_aspirants_desc')}
                             </Card>
-                            <Card title="Professionals" icon={Users}>
-                                Working professionals aiming to upskill without language constraints.
+                            <Card title={t('card_professionals_title')} icon={Users}>
+                                {t('card_professionals_desc')}
                             </Card>
-                            <Card title="Lifelong Learners" icon={Heart}>
-                                Anyone with a curiosity to learn and grow, irrespective of age.
+                            <Card title={t('card_lifelong_title')} icon={Heart}>
+                                {t('card_lifelong_desc')}
                             </Card>
                         </div>
                     </div>

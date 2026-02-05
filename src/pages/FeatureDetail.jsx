@@ -1,12 +1,33 @@
 import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, CheckCircle } from 'lucide-react';
 
 const FeatureDetail = () => {
     const { slug } = useParams();
+    const navigate = useNavigate();
 
     // Map slang to readable title (Simple logic for demo)
     const title = slug ? slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') : "Feature";
+
+    // Mapping slugs to actual routes
+    const featureRoutes = {
+        'quizzes-&-tests': '/quizzes-tests',
+        'quizzes-tests': '/quizzes-tests', // Handle potential variations
+        'mobile-first-design': '/mobile-first-design',
+        'community-contribution': '/community-contribution',
+        'discussion-forums': '/discussion-forums',
+        'study-materials': '/study-materials',
+        'recorded-sessions': '/recorded-sessions'
+    };
+
+    const handleTryNow = () => {
+        const route = featureRoutes[slug];
+        if (route) {
+            navigate(route);
+        } else {
+            alert("This feature is coming soon!");
+        }
+    };
 
     return (
         <section className="section" style={{ paddingTop: '8rem', minHeight: '80vh' }}>
@@ -52,7 +73,7 @@ const FeatureDetail = () => {
                         </div>
                     </div>
 
-                    <button className="btn btn-primary">
+                    <button className="btn btn-primary" onClick={handleTryNow}>
                         Try {title} Now
                     </button>
                 </div>

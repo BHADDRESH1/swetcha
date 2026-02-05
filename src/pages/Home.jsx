@@ -89,7 +89,7 @@ const Home = () => {
                                 {t('start_learning')} <ArrowRight size={20} />
                             </Link>
                             <button className="btn btn-secondary">
-                                <Play size={20} fill="currentColor" style={{ opacity: 0.8 }} /> Watch Demo
+                                <Play size={20} fill="currentColor" style={{ opacity: 0.8 }} /> {t('watch_demo')}
                             </button>
                         </div>
 
@@ -103,7 +103,7 @@ const Home = () => {
                                     }} />
                                 ))}
                             </div>
-                            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Trusted by <strong>10,000+</strong> students</p>
+                            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>{t('trusted_by')} <strong>10,000+</strong> {t('students')}</p>
                         </div>
                     </div>
 
@@ -241,10 +241,10 @@ const Home = () => {
             <section style={{ borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)', background: 'linear-gradient(to right, rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.8))', backdropFilter: 'blur(10px)' }}>
                 <div className="container" style={{ padding: '4rem 1rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '3rem', textAlign: 'center' }}>
                     {[
-                        { label: "Languages", val: "4+" },
-                        { label: "Video Lessons", val: "500+" },
-                        { label: "Expert Mentors", val: "50+" },
-                        { label: "Community", val: "24/7" }
+                        { label: t('stats_languages'), val: "4+" },
+                        { label: t('stats_video_lessons'), val: "500+" },
+                        { label: t('stats_mentors'), val: "50+" },
+                        { label: t('stats_community'), val: "24/7" }
                     ].map((stat, idx) => (
                         <div key={idx} style={{ position: 'relative' }}>
                             <h3 style={{ fontSize: '3rem', fontWeight: '800', lineHeight: 1, marginBottom: '0.5rem', color: 'white' }}>{stat.val}</h3>
@@ -266,14 +266,14 @@ const Home = () => {
                     </div>
 
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
-                        <Card title="Language Barrier" icon={Globe}>
-                            <p>Millions of students struggle because quality content is predominantly in English. We bring content to your mother tongue.</p>
+                        <Card title={t('language_barrier_title')} icon={Globe}>
+                            <p>{t('language_barrier_desc')}</p>
                         </Card>
-                        <Card title="Access Equality" icon={BookOpen}>
-                            <p>Quality education often comes with a high price tag. Swetcha Learning democratizes access for everyone.</p>
+                        <Card title={t('access_equality_title')} icon={BookOpen}>
+                            <p>{t('access_equality_desc')}</p>
                         </Card>
-                        <Card title="Active Participation" icon={Users}>
-                            <p>Passive learning isn't enough. Our community-driven approach ensures active discussion and peer growth.</p>
+                        <Card title={t('active_participation_title')} icon={Users}>
+                            <p>{t('active_participation_desc')}</p>
                         </Card>
                     </div>
                 </div>
@@ -284,11 +284,11 @@ const Home = () => {
                 <div className="container">
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'end', marginBottom: '3rem' }}>
                         <div>
-                            <h2 style={{ fontSize: '2.5rem', fontWeight: '700', marginBottom: '0.5rem' }}>Core Features</h2>
-                            <p style={{ color: 'var(--text-muted)' }}>Everything you need to excel.</p>
+                            <h2 style={{ fontSize: '2.5rem', fontWeight: '700', marginBottom: '0.5rem' }}>{t('core_features_title')}</h2>
+                            <p style={{ color: 'var(--text-muted)' }}>{t('core_features_sub')}</p>
                         </div>
                         <Link to="/features" className="btn btn-secondary" style={{ display: 'none', md: { display: 'inline-flex' } }}>
-                            View All Features
+                            {t('view_all_features')}
                         </Link>
                     </div>
 
@@ -298,8 +298,8 @@ const Home = () => {
                                 <Video size={28} />
                             </div>
                             <div>
-                                <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem' }}>Live Interactions</h3>
-                                <p style={{ color: 'var(--text-muted)', lineHeight: '1.6' }}>Real-time doubts solving and interactive sessions with mentors.</p>
+                                <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem' }}>{t('live_interactions_title')}</h3>
+                                <p style={{ color: 'var(--text-muted)', lineHeight: '1.6' }}>{t('live_interactions_desc')}</p>
                             </div>
                         </Link>
 
@@ -308,8 +308,8 @@ const Home = () => {
                                 <Download size={28} />
                             </div>
                             <div>
-                                <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem' }}>Offline Access</h3>
-                                <p style={{ color: 'var(--text-muted)', lineHeight: '1.6' }}>Download study materials and videos for low-data usage.</p>
+                                <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem' }}>{t('offline_access_title')}</h3>
+                                <p style={{ color: 'var(--text-muted)', lineHeight: '1.6' }}>{t('offline_access_desc')}</p>
                             </div>
                         </Link>
 
@@ -318,8 +318,8 @@ const Home = () => {
                                 <MessageCircle size={28} />
                             </div>
                             <div>
-                                <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem' }}>Community Forums</h3>
-                                <p style={{ color: 'var(--text-muted)', lineHeight: '1.6' }}>Discuss topics in your local language with peers.</p>
+                                <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem' }}>{t('community_forums_title')}</h3>
+                                <p style={{ color: 'var(--text-muted)', lineHeight: '1.6' }}>{t('community_forums_desc')}</p>
                             </div>
                         </Link>
                     </div>
@@ -330,12 +330,12 @@ const Home = () => {
             <section className="section">
                 <div className="container" style={{ textAlign: 'center' }}>
                     <div className="glass-card" style={{ padding: '5rem 2rem', maxWidth: '900px', margin: '0 auto', background: 'linear-gradient(135deg, rgba(13, 148, 136, 0.2), rgba(15, 23, 42, 0.6))', border: '1px solid rgba(45, 212, 191, 0.2)' }}>
-                        <h2 style={{ fontSize: '3rem', fontWeight: '800', marginBottom: '1.5rem', color: 'white' }}>Ready to start your journey?</h2>
+                        <h2 style={{ fontSize: '3rem', fontWeight: '800', marginBottom: '1.5rem', color: 'white' }}>{t('ready_journey_title')}</h2>
                         <p style={{ fontSize: '1.25rem', color: 'var(--text-muted)', marginBottom: '3rem', maxWidth: '600px', margin: '0 auto 3rem auto' }}>
-                            Join thousands of learners today. It's free and open for everyone.
+                            {t('ready_journey_desc')}
                         </p>
                         <Link to="/contact" className="btn btn-primary" style={{ padding: '1rem 3rem', fontSize: '1.2rem' }}>
-                            Join Swetcha Learning
+                            {t('join_button')}
                         </Link>
                     </div>
                 </div>

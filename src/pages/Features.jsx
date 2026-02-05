@@ -8,43 +8,51 @@ const Features = () => {
 
     const features = [
         {
-            title: "Multilingual Support",
-            desc: "Switch seamlessly between English, Tamil, Telugu, and Hindi. Learn complex concepts in the language closest to your heart.",
+            title: t('multilingual_support_title'),
+            desc: t('multilingual_support_desc'),
+            original_title: "Multilingual Support", // Kept for slug generation if needed, or simple use English title for slug
             icon: Globe
         },
         {
-            title: "Live Online Classes",
-            desc: "Interact with expert educators in real-time. Ask questions, get clarifications, and participate in live discussions.",
+            title: t('live_classes_title'),
+            desc: t('live_classes_desc'),
+            original_title: "Live Online Classes",
             icon: Video
         },
         {
-            title: "Recorded Sessions",
-            desc: "Missed a class? No problem. Access high-quality recorded sessions anytime, anywhere, at your own pace.",
+            title: t('recorded_sessions_title'),
+            desc: t('recorded_sessions_desc'),
+            original_title: "Recorded Sessions",
             icon: Video
         },
         {
-            title: "Study Materials",
-            desc: "Download comprehensive notes, PDFs, and cheat sheets. All materials are open access and free to redistribute.",
+            title: t('study_materials_title'),
+            desc: t('study_materials_desc'),
+            original_title: "Study Materials",
             icon: FileText
         },
         {
-            title: "Quizzes & Tests",
-            desc: "Test your knowledge with chapter-wise quizzes. Track your progress and identify areas for improvement.",
+            title: t('quizzes_tests_title'),
+            desc: t('quizzes_tests_desc'),
+            original_title: "Quizzes & Tests",
             icon: CheckCircle
         },
         {
-            title: "Discussion Forums",
-            desc: "Join a vibrant community of learners. Discuss topics, share resources, and help peers in our moderated forums.",
+            title: t('discussion_forums_title'),
+            desc: t('discussion_forums_desc'),
+            original_title: "Discussion Forums",
             icon: MessageSquare
         },
         {
-            title: "Community Contribution",
-            desc: "Knowledge grows when shared. You can contribute notes, translate content, or even host sessions upon verification.",
+            title: t('community_contribution_title'),
+            desc: t('community_contribution_desc'),
+            original_title: "Community Contribution",
             icon: Upload
         },
         {
-            title: "Mobile-First Design",
-            desc: "Optimized for low-bandwidth connections and mobile devices, ensuring education reaches every corner.",
+            title: t('mobile_first_title'),
+            desc: t('mobile_first_desc'),
+            original_title: "Mobile-First Design",
             icon: Smartphone
         }
     ];
@@ -55,14 +63,15 @@ const Features = () => {
                 <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
                     <h1 style={{ fontSize: '3rem', fontWeight: '800', marginBottom: '1rem' }}><span className="text-gradient">{t('features')}</span></h1>
                     <p style={{ fontSize: '1.25rem', color: 'var(--text-muted)', maxWidth: '700px', margin: '0 auto' }}>
-                        A comprehensive suite of tools designed to democratize education.
+                        {t('features_subtitle')}
                     </p>
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
                     {features.map((feature, index) => {
                         const Icon = feature.icon;
-                        const slug = feature.title.toLowerCase().replace(/\s+/g, '-');
+                        // Use original English title for consistent slugs regardless of selected language
+                        const slug = feature.original_title.toLowerCase().replace(/\s+/g, '-').replace('&', '').replace(/-+/g, '-');
 
                         return (
                             <Link
@@ -117,7 +126,7 @@ const Features = () => {
                                     fontWeight: '600',
                                     fontSize: '0.9rem'
                                 }}>
-                                    Explore Feature <span>→</span>
+                                    {t('explore_feature')} <span>→</span>
                                 </div>
                             </Link>
                         );
@@ -140,22 +149,22 @@ const Features = () => {
                                 <li style={{ display: 'flex', gap: '1rem', alignItems: 'start' }}>
                                     <CheckCircle color="var(--primary)" style={{ marginTop: '0.25rem', flexShrink: 0 }} />
                                     <div>
-                                        <h4 style={{ fontSize: '1.25rem', fontWeight: '600' }}>Community Driven</h4>
-                                        <p style={{ color: 'var(--text-muted)' }}>We are built by the community, for the community. No corporate gates.</p>
+                                        <h4 style={{ fontSize: '1.25rem', fontWeight: '600' }}>{t('community_driven_title')}</h4>
+                                        <p style={{ color: 'var(--text-muted)' }}>{t('community_driven_desc')}</p>
                                     </div>
                                 </li>
                                 <li style={{ display: 'flex', gap: '1rem', alignItems: 'start' }}>
                                     <CheckCircle color="var(--primary)" style={{ marginTop: '0.25rem', flexShrink: 0 }} />
                                     <div>
-                                        <h4 style={{ fontSize: '1.25rem', fontWeight: '600' }}>Tech for Good</h4>
-                                        <p style={{ color: 'var(--text-muted)' }}>Using open source technology to solve real human problems.</p>
+                                        <h4 style={{ fontSize: '1.25rem', fontWeight: '600' }}>{t('tech_for_good_title')}</h4>
+                                        <p style={{ color: 'var(--text-muted)' }}>{t('tech_for_good_desc')}</p>
                                     </div>
                                 </li>
                                 <li style={{ display: 'flex', gap: '1rem', alignItems: 'start' }}>
                                     <CheckCircle color="var(--primary)" style={{ marginTop: '0.25rem', flexShrink: 0 }} />
                                     <div>
-                                        <h4 style={{ fontSize: '1.25rem', fontWeight: '600' }}>Zero Cost</h4>
-                                        <p style={{ color: 'var(--text-muted)' }}>Quality education shouldn't be a debt trap. Our resources are free.</p>
+                                        <h4 style={{ fontSize: '1.25rem', fontWeight: '600' }}>{t('zero_cost_title')}</h4>
+                                        <p style={{ color: 'var(--text-muted)' }}>{t('zero_cost_desc')}</p>
                                     </div>
                                 </li>
                             </ul>
